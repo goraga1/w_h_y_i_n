@@ -5,4 +5,35 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+
+    <string name="label_skip_for_now">Skip for Now</string>
+    <string name="label_signin_screen">Log in using the form below</string>
+    <string name="label_signup_screen">Sign up by filling in the fields below</string>
+    <string name="label_name">Name</string>
+    <string name="label_email">Email</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_ext">Ext.</string>
+    <string name="label_u_or_e">Username or Email</string>
+    <string name="label_password">Password</string>
+    <string name="label_login">Log In</string>
+    <string name="label_sign_up">Sign Up</string>
+    <string name="label_sign_in">Sign In</string>
+
+    <string name="label_c_or_z">City or Zipcode</string>
+    <string name="label_find_near_button">Find Latin Restaurants Near Me</string>
+
+    <string name="label_dont_have_account">Don\'t have an account? %s</string>
+    <string name="label_already_registered">Already registered? %s</string>
+
+    <string name="label_tap_to_find">Tap to find restaurants nearby</string>
+    <string name="label_find_near">Order From 30+ Latin Restaurants Near You.</string>
+
+    <string name="label_by_signin_up" >By singing up you agree to our</string>
+    <string name="label_terms_format" >%1$s, %2$s and %3$s</string>
+    <string name="label_terms">Terms</string>
+    <string name="label_c_policy">Cookie Policy</string>
+    <string name="label_p_policy">Privacy Policy</string>
+
 </resources>
