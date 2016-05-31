@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_rest"
@@ -18,14 +17,10 @@
             android:id="@+id/nav_refer"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/left_nav_refer_a_friend" />
-
-
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/left_nav_contacts" />
-
-
         <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_menu_slideshow"
@@ -34,15 +29,9 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/left_nav_about" />
-
-
         <item
             android:id="@+id/nav_sing_out"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/left_nav_sign_out" />
-
-
     </group>
-
-
 </menu>

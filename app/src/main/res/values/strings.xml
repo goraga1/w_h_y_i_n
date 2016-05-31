@@ -44,4 +44,28 @@
     <string name="left_nav_about">About WhyInside</string>
     <string name="left_nav_sign_out">Sign Out</string>
 
+    <!--Settings Activity-->
+    <string name="label_notifications">Notifications</string>
+    <string name="label_load_images">Load Images</string>
+
+
+    <!--ContactUsActivity-->
+    <string name="label_our_hotline">Our hotline</string>
+    <string name="label_freq_asked_question">Frequently asked questions</string>
+    <string name="label__contact_note">Couldn\'t fint the answer to your question? Use the form below to get in touch with us</string>
+    <string name="label_subject">Subject</string>
+    <string name="label_write_question_here">Write your question here</string>
+    <string name="label_send_message">Send Message</string>
+
+
+    <!--AccountActivity-->
+    <string name="label_general_inf">General information</string>
+    <string name="label_security">Security</string>
+    <string name="label_change_password">Change password</string>
+    <string name="label_save_changes">Save Changes</string>
+
+    <!--Security Activity-->
+    <string name="label_changing_password">Changing Password</string>
+    <string name="label_old_pass">Old password</string>
+    <string name="label_new_pass">New password</string>
 </resources>

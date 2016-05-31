@@ -22,22 +22,50 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/field_padding"
             android:gravity="center"
-
+            android:singleLine="true"
             android:textSize="@dimen/field_text_size"
             android:hint="@string/label_name"
             android:background="@drawable/field_bg_white"/>
-
-        <EditText
-            android:id="@+id/phone"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/field_padding"
-            android:gravity="center"
-            android:textSize="@dimen/field_text_size"
-            android:hint="@string/label_phone"
             android:layout_marginTop="@dimen/field_line_margin"
             android:layout_marginBottom="@dimen/field_line_margin"
-            android:background="@drawable/field_bg_white"/>
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:background="@drawable/field_bg_white">
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/field_padding"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:textSize="@dimen/field_text_size"
+                android:hint="@string/label_phone"
+                android:singleLine="true"
+                android:background="@android:color/transparent"/>
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/gray"
+                />
+            <EditText
+                android:id="@+id/ext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/field_padding"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:textSize="@dimen/field_text_size"
+                android:hint="@string/label_ext"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
 
         <EditText
             android:id="@+id/email"
@@ -45,6 +73,8 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/field_padding"
             android:gravity="center"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
             android:textSize="@dimen/field_text_size"
             android:hint="@string/label_email"
             android:background="@drawable/field_bg_white"/>
@@ -58,6 +88,8 @@
             android:layout_marginTop="@dimen/field_line_margin"
             android:layout_marginBottom="@dimen/field_line_margin"
             android:hint="@string/label_password"
+            android:inputType="textPassword"
+            android:singleLine="true"
             android:textSize="@dimen/field_text_size"
             android:background="@drawable/field_bg_white"/>
 

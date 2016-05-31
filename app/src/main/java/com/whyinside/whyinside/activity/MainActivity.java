@@ -1,5 +1,6 @@
 package com.whyinside.whyinside.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -66,10 +67,7 @@ public class MainActivity extends AppCompatActivity
 
         a.add(5, fdLabel1);
 
-
         navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, a));
-
-
     }
 
     @Override
@@ -112,9 +110,26 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_rest) {
-            // Handle the camera action
+        switch (id) {
+            case R.id.nav_rest:
+                break;
+            case R.id.nav_account:
+                startActivity(new Intent(MainActivity.this,AccountActivity.class));
+                break;
+            case R.id.nav_contact:
+                startActivity(new Intent(MainActivity.this,ContactUsActivity.class));
+                break;
+            case R.id.nav_setting:
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+                break;
+            case R.id.nav_refer:
+                startActivity(new Intent(MainActivity.this,ReferFriendActivity.class));
+                break;
+            case R.id.nav_sing_out:
+                finish();
+                break;
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

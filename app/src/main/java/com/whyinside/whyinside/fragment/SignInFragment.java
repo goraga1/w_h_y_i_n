@@ -17,8 +17,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.whyinside.whyinside.R;
+import com.whyinside.whyinside.activity.AccountActivity;
+import com.whyinside.whyinside.activity.ContactUsActivity;
+import com.whyinside.whyinside.activity.FAQActivity;
 import com.whyinside.whyinside.activity.FindNearActivity;
 import com.whyinside.whyinside.activity.LoginActivity;
+import com.whyinside.whyinside.activity.MainActivity;
+import com.whyinside.whyinside.activity.SettingsActivity;
 import com.whyinside.whyinside.listener.LoginNavigationListener;
 
 import butterknife.Bind;
@@ -34,6 +39,8 @@ public class SignInFragment extends LoginBaseFragment {
     @Bind(R.id.sign_up)
     TextView mSignUp;
 
+    @Bind(R.id.btn_signin)
+    TextView mSignIn;
 
 
     @Nullable
@@ -59,6 +66,13 @@ public class SignInFragment extends LoginBaseFragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),FindNearActivity.class));
+            }
+        });
+
+        mSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),AccountActivity.class));
             }
         });
 

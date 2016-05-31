@@ -23,6 +23,8 @@
             android:gravity="center"
             android:textSize="@dimen/field_text_size"
             android:hint="@string/label_u_or_e"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
             android:padding="@dimen/field_padding"
             android:background="@drawable/field_bg_white"/>
 
@@ -31,11 +33,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:singleLine="true"
             android:layout_marginTop="@dimen/field_line_margin"
             android:layout_marginBottom="@dimen/field_line_margin"
             android:hint="@string/label_password"
             android:textSize="@dimen/field_text_size"
             android:padding="@dimen/field_padding"
+            android:inputType="textPassword"
             android:background="@drawable/field_bg_white"/>
 
         <TextView
