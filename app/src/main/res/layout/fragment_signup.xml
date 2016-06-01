@@ -97,7 +97,7 @@
             android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/field_bg_red"
+            android:background="@drawable/field_bg_selector_red"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/field_text_size"
             android:gravity="center_horizontal"
@@ -110,7 +110,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textColor="@color/colorWhite"
-
             android:text="@string/label_already_registered"
             android:gravity="center_horizontal"/>
     </LinearLayout>
@@ -118,7 +117,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#55000000"
+        android:background="#a0000000"
         android:layout_alignParentBottom="true"
         android:padding="20dp">
         <LinearLayout

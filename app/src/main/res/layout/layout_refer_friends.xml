@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/page_padding">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/label_discount"
+        android:textColor="@color/colorGreen"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/label_get_discount"
+        android:textColor="@color/gray"
+        android:layout_marginTop="5dp"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/label_reg_link_note"
+        android:textColor="@color/gray"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btn_copy">
+            <EditText
+                android:id="@+id/refer_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/refer_link"
+                android:background="@color/gray" />
+
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/btn_copy"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_copy"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="@string/label_referal_list"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="15dp"
+        android:textSize="14dp"/>
+
+    <LinearLayout
+        android:id="@+id/referal_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/page_padding"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/btn_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_invite_on_facebook"
+            android:textSize="@dimen/field_text_size"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorWhite"
+            android:padding="@dimen/field_padding"
+            android:background="@drawable/field_fb_selector"/>
+
+        <TextView
+            android:id="@+id/btn_twitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/page_padding"
+            android:text="@string/label_invite_on_twitter"
+            android:textSize="@dimen/field_text_size"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorWhite"
+            android:padding="@dimen/field_padding"
+            android:background="@drawable/field_twitter_selector"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -8,6 +8,7 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="page_padding">15dp</dimen>
+    <dimen name="page_padding_big">20dp</dimen>
 
     <dimen name="field_corner">5dp</dimen>
     <dimen name="field_padding">13dp</dimen>

@@ -23,6 +23,7 @@ import com.whyinside.whyinside.activity.FAQActivity;
 import com.whyinside.whyinside.activity.FindNearActivity;
 import com.whyinside.whyinside.activity.LoginActivity;
 import com.whyinside.whyinside.activity.MainActivity;
+import com.whyinside.whyinside.activity.OrderSummeryAvtivity;
 import com.whyinside.whyinside.activity.SettingsActivity;
 import com.whyinside.whyinside.listener.LoginNavigationListener;
 
@@ -72,7 +73,7 @@ public class SignInFragment extends LoginBaseFragment {
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),AccountActivity.class));
+                startActivity(new Intent(getActivity(),OrderSummeryAvtivity.class));
             }
         });
 

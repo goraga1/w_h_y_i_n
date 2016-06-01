@@ -3,35 +3,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_rest"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_resto"
             android:title="@string/left_nav_restaurants" />
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_orderhistory"
             android:title="@string/left_nav_order_history" />
         <item
             android:id="@+id/nav_account"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_account"
             android:title="@string/left_nav_account" />
         <item
             android:id="@+id/nav_refer"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_referals"
             android:title="@string/left_nav_refer_a_friend" />
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_contacts"
             android:title="@string/left_nav_contacts" />
         <item
             android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_settings"
             android:title="@string/left_nav_settings" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_about"
             android:title="@string/left_nav_about" />
         <item
             android:id="@+id/nav_sing_out"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_signout"
             android:title="@string/left_nav_sign_out" />
     </group>
 </menu>
