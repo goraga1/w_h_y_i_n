@@ -6,8 +6,6 @@
 
     <string name="action_filter">Filter</string>
 
-
-
     <string name="label_skip_for_now">Skip for Now</string>
     <string name="label_signin_screen">Log in using the form below</string>
     <string name="label_signup_screen">Sign up by filling in the fields below</string>
@@ -80,29 +78,22 @@
     <string name="label_invite_on_facebook">Invite on Facebook</string>
     <string name="label_invite_on_twitter">Invite on Twitter</string>
 
-
     <!--Order Summary-->
     <string name="label_subtotal">Subtotal</string>
     <string name="label_tax">Tax</string>
     <string name="label_tip">Tip</string>
     <string name="label_total">Total</string>
-
     <string name="label_receivce_note">When would you like to receivce the order?</string>
-
     <string name="label_date">Date</string>
     <string name="label_time">Time</string>
     <string name="label_delivery_method">Delivery method</string>
     <string name="label_please_select_payment">Please select a payment method</string>
-
     <string name="label_cash">Cash</string>
     <string name="label_paypal">PayPal</string>
     <string name="label_credit_card">Credit Card</string>
-
     <string name="label_new_credit_card">New Credit Card details</string>
-
     <string name="label_enter_coupon_code">Enter a coupon code if applicable</string>
     <string name="label_delivery_instruction">Delivery Instructions</string>
-
     <string name="label_place_order">Place Order</string>
 
 </resources>
