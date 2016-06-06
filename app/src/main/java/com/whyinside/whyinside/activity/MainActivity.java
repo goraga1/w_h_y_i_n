@@ -19,30 +19,74 @@ import com.whyinside.whyinside.models.filter.FilterData;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+/**
+ * Created by GorA on 6/2/16.
+ */
+
+public class MainActivity extends AppCompatActivity {
+
+
+    @Bind(R.id.nav_view_right)
+    RecyclerView navigationView1;
+
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-        //drawer.setScrimColor(Color.TRANSPARENT);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView leftNavigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        leftNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                // Handle Left navigation view item clicks here.
+                int id = item.getItemId();
+
+                switch (id) {
+                    case R.id.nav_rest:
+                        break;
+                    case R.id.nav_account:
+                        startActivity(new Intent(MainActivity.this, AccountActivity.class));
+                        break;
+                    case R.id.nav_contact:
+                        startActivity(new Intent(MainActivity.this, ContactUsActivity.class));
+                        break;
+                    case R.id.nav_setting:
+                        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        break;
+                    case R.id.nav_refer:
+                        startActivity(new Intent(MainActivity.this, ReferFriendActivity.class));
+                        break;
+                    case R.id.nav_sing_out:
+                        finish();
+                        break;
+                }
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
 
-        RecyclerView navigationView1 = (RecyclerView) findViewById(R.id.nav_view_right);
-        navigationView.setNavigationItemSelectedListener(this);
-        //navigationView1.setNavigationItemSelectedListener(this);
+        setUpRightMenu();
 
+    }
+
+
+    private void setUpRightMenu() {
         LinearLayoutManager ln = new LinearLayoutManager(this);
         ln.setOrientation(LinearLayoutManager.VERTICAL);
         navigationView1.setHasFixedSize(true);
@@ -75,13 +119,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if ((drawer.isDrawerOpen(GravityCompat.END))) {
+        } else if (drawer.isDrawerOpen(GravityCompat.END)) {  /*Closes the Appropriate Drawer*/
             drawer.closeDrawer(GravityCompat.END);
         } else {
             super.onBackPressed();
+            System.exit(0);
         }
     }
 
@@ -101,41 +145,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_filter) {
+            drawer.openDrawer(GravityCompat.END); /*Opens the Right Drawer*/
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        switch (id) {
-            case R.id.nav_rest:
-                break;
-            case R.id.nav_account:
-                startActivity(new Intent(MainActivity.this,AccountActivity.class));
-                break;
-            case R.id.nav_contact:
-                startActivity(new Intent(MainActivity.this,ContactUsActivity.class));
-                break;
-            case R.id.nav_setting:
-                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
-                break;
-            case R.id.nav_refer:
-                startActivity(new Intent(MainActivity.this,ReferFriendActivity.class));
-                break;
-            case R.id.nav_sing_out:
-                finish();
-                break;
-        }
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }
