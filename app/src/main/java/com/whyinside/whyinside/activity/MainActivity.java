@@ -62,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_account:
                         startActivity(new Intent(MainActivity.this, AccountActivity.class));
                         break;
+                    case R.id.nav_history:
+                        startActivity(new Intent(MainActivity.this, OrderHistoryActivity.class));
+                        break;
                     case R.id.nav_contact:
                         startActivity(new Intent(MainActivity.this, ContactUsActivity.class));
                         break;
