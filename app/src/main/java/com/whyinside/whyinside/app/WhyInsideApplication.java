@@ -1,4 +1,4 @@
-package com.whyinside.whyinside;
+package com.whyinside.whyinside.app;
 
 import android.app.Activity;
 import android.app.Application;
@@ -6,13 +6,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 /**
- * Created by GorA on 5/6/16.
+ * Created by Hayk on 06/06/2016.
  */
-public class MyApplication extends Application {
-
+public class WhyInsideApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ContextHolder.getInstance().setContext(this);
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
 
