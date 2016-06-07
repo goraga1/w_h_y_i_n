@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/page_padding"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="#F5F5F5"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView android:id="@+id/item_name"
+                tools:text="Person Name"
+                android:textColor="@android:color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:textSize="16dp"
+                android:layout_toLeftOf="@+id/reorder"
+                android:layout_height="wrap_content" />
+
+            <TextView android:id="@+id/reorder"
+                tools:text="Re-Order"
+                android:layout_margin="@dimen/standard_padding_small"
+                android:textColor="@color/colorRed"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:textSize="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:weightSum="12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/item_date"
+                android:textColor="#8f8f8f"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Apr 19, 2016"
+                android:layout_weight="4"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#8f8f8f"/>
+
+            <TextView android:id="@+id/item_delivery_method"
+                android:textColor="#8f8f8f"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Delivery"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="3"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#8f8f8f"/>
+
+            <TextView android:id="@+id/item_price"
+                android:textColor="#8f8f8f"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="$13.7"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

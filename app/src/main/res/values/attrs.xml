@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StarsView">
+        <attr name="size" format="integer" />
+        <attr name="stars_padding" format="integer" />
+        <attr name="fill_icon" format="integer" />
+        <attr name="unfill_icon" format="integer" />
+    </declare-styleable>
+
+</resources>
