@@ -6,25 +6,22 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.whyinside.whyinside.adapters.views.AbstractView;
-import com.whyinside.whyinside.adapters.views.FilterCheckboxView;
-import com.whyinside.whyinside.adapters.views.FilterLabelView;
 import com.whyinside.whyinside.adapters.views.RestaurantView;
-import com.whyinside.whyinside.models.filter.FilterData;
-import com.whyinside.whyinside.models.restaurant.RestaurantData;
+import com.whyinside.whyinside.models.restaurant.Restaurant;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Hayk on 06/06/2016.
  */
-public class RestaurantRecyclerAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RestaurantRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mInflater;
-    private ArrayList<RestaurantData> mItems;
+    private List<Restaurant> mItems;
     private Context context;
 
     private static final int VIEW_TYPE_ITEM = 1;
 
-    public RestaurantRecyclerAdapter(Context context, ArrayList<RestaurantData> items) {
+    public RestaurantRecyclerAdapter(Context context, List<Restaurant> items) {
         mInflater = LayoutInflater.from(context);
         mItems = items;
         this.context = context;
@@ -42,7 +39,7 @@ public class RestaurantRecyclerAdapter  extends RecyclerView.Adapter<RecyclerVie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         AbstractView abstractView = (AbstractView) holder;
-        RestaurantData filterData = mItems.get(position);
+        Restaurant filterData = mItems.get(position);
 
         abstractView.bind(filterData);
     }
@@ -54,6 +51,6 @@ public class RestaurantRecyclerAdapter  extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public int getItemViewType(int position) {
-       return VIEW_TYPE_ITEM;
+        return VIEW_TYPE_ITEM;
     }
 }

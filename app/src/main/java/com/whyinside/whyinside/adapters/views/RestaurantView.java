@@ -4,12 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.whyinside.whyinside.R;
-import com.whyinside.whyinside.models.filter.FilterData;
-import com.whyinside.whyinside.models.restaurant.RestaurantData;
+import com.whyinside.whyinside.models.restaurant.Restaurant;
 import com.whyinside.whyinside.views.WhyInsideStarsView;
 
 import butterknife.Bind;
@@ -26,7 +24,7 @@ public class RestaurantView extends AbstractView {
     WhyInsideStarsView mStartView;
     @Override
     public void bind(Object data) {
-        RestaurantData currentData = (RestaurantData) data;
+        Restaurant currentData = (Restaurant) data;
         mName.setText(currentData.getName());
         mStartView.setRate(3.8f);
     }

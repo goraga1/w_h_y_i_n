@@ -3,8 +3,10 @@ package com.whyinside.whyinside.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import android.view.MenuItem;
 
 import com.whyinside.whyinside.R;
 import com.whyinside.whyinside.adapters.FilterRecyclerAdapter;
+import com.whyinside.whyinside.fragment.RestaurantListFragment;
 import com.whyinside.whyinside.models.filter.FilterData;
 
 import java.util.ArrayList;
@@ -31,8 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.nav_view_right)
     RecyclerView navigationView1;
+    private FragmentManager mFragmentManager;
 
     DrawerLayout drawer;
+
+    ActionBar actionBar;
+
+
+//    @Override
+//    public void onAttachedToWindow() {
+//        super.onAttachedToWindow();
+//        actionBar = ((AppCompatActivity) ).getSupportActionBar();
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.bringToFront();
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentManager.beginTransaction().replace(R.id.fragment_container_rest, new RestaurantListFragment()).commit();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
