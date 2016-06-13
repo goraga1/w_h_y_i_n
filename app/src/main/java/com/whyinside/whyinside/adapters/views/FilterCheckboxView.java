@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import com.whyinside.whyinside.R;
-import com.whyinside.whyinside.models.filter.FilterData;
+import com.whyinside.whyinside.models.filter.FilterCollectedData;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,8 +23,8 @@ public class FilterCheckboxView extends AbstractView {
 
     @Override
     public void bind(Object data) {
-        FilterData currentData = (FilterData) data;
-        filterCheckBox.setText(currentData.getName());
+        FilterCollectedData currentData = (FilterCollectedData) data;
+        filterCheckBox.setText(currentData.getTitle());
     }
 
     public FilterCheckboxView(Context context, ViewGroup parent) {

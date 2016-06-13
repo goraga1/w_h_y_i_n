@@ -18,12 +18,20 @@ import android.view.MenuItem;
 import com.whyinside.whyinside.R;
 import com.whyinside.whyinside.adapters.FilterRecyclerAdapter;
 import com.whyinside.whyinside.fragment.RestaurantListFragment;
+import com.whyinside.whyinside.models.filter.Filter;
+import com.whyinside.whyinside.models.filter.FilterCollectedData;
 import com.whyinside.whyinside.models.filter.FilterData;
+import com.whyinside.whyinside.services.MClient;
+import com.whyinside.whyinside.services.ServiceGenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by GorA on 6/2/16.
@@ -55,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.bringToFront();
+
+
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction().replace(R.id.fragment_container_rest, new RestaurantListFragment()).commit();
 
@@ -100,41 +110,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        setUpRightMenu();
-
+        requestFilterData();
     }
 
 
-    private void setUpRightMenu() {
+    private void setUpRightMenu(FilterData filter) {
         LinearLayoutManager ln = new LinearLayoutManager(this);
         ln.setOrientation(LinearLayoutManager.VERTICAL);
         navigationView1.setHasFixedSize(true);
         navigationView1.setLayoutManager(ln);
 
-        ArrayList<FilterData> a = new ArrayList<>();
+        List<FilterCollectedData> filterCollectedDataList = new ArrayList<>();
 
-        for (int i = 0; i < 30; i++) {
-            FilterData fd = new FilterData();
+        FilterCollectedData cityLabel = new FilterCollectedData();
 
-            fd.setName(String.valueOf(i) + "item");
-            a.add(fd);
+        cityLabel.setTitle("City");
+        cityLabel.setViewType(1);
 
+        filterCollectedDataList.add(0, cityLabel);
+
+        for (String cityName : filter.getCity()) {
+            FilterCollectedData cityData = new FilterCollectedData();
+            cityData.setViewType(2);
+            cityData.setTitle(cityName);
+
+            filterCollectedDataList.add(cityData);
         }
 
-        FilterData fdLabel = new FilterData();
-        FilterData fdLabel1 = new FilterData();
+        FilterCollectedData cuisineLabel = new FilterCollectedData();
 
-        fdLabel.setName("Label 1");
-        fdLabel.setViewType(1);
-        fdLabel1.setName("Label 2");
-        fdLabel1.setViewType(1);
+        cuisineLabel.setTitle("Cuisine");
+        cuisineLabel.setViewType(1);
 
-        a.add(0, fdLabel);
+        filterCollectedDataList.add(filter.getCity().size() + 1, cuisineLabel);
 
-        a.add(5, fdLabel1);
 
-        navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, a));
+        for (String cuisineName : filter.getCity()) {
+            FilterCollectedData cuisineData = new FilterCollectedData();
+            cuisineData.setViewType(2);
+            cuisineData.setTitle(cuisineName);
+
+            filterCollectedDataList.add(cuisineData);
+        }
+
+
+        navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, filterCollectedDataList));
     }
 
     @Override
@@ -171,5 +191,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void requestFilterData() {
+        MClient client = ServiceGenerator.createService(MClient.class);
+
+        Call<Filter> call = client.filtersList();
+        call.enqueue(new Callback<Filter>() {
+            @Override
+            public void onResponse(Call<Filter> call, Response<Filter> response) {
+                setUpRightMenu((response.body().getData()));
+            }
+
+            @Override
+            public void onFailure(Call<Filter> call, Throwable t) {
+                System.out.print("Error" + t.getMessage());
+            }
+        });
+
     }
 }

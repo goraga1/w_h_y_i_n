@@ -13,20 +13,20 @@ import android.view.ViewGroup;
 import com.whyinside.whyinside.adapters.views.AbstractView;
 import com.whyinside.whyinside.adapters.views.FilterCheckboxView;
 import com.whyinside.whyinside.adapters.views.FilterLabelView;
-import com.whyinside.whyinside.models.filter.FilterData;
+import com.whyinside.whyinside.models.filter.FilterCollectedData;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class FilterRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mInflater;
-    private ArrayList<FilterData> mItems;
+    private List<FilterCollectedData> mItems;
     private Context context;
 
 
     private static final int VIEW_TYPE_LABEL = 1;
     private static final int VIEW_TYPE_CHECKBOX = 2;
 
-    public FilterRecyclerAdapter(Context context, ArrayList<FilterData> items) {
+    public FilterRecyclerAdapter(Context context, List<FilterCollectedData> items) {
         mInflater = LayoutInflater.from(context);
         mItems = items;
         this.context = context;
@@ -76,7 +76,7 @@ public class FilterRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         AbstractView abstractView = (AbstractView) viewHolder;
-        FilterData filterData = mItems.get(position);
+        FilterCollectedData filterData = mItems.get(position);
 
         abstractView.bind(filterData);
 

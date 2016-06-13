@@ -1,27 +1,56 @@
+
 package com.whyinside.whyinside.models.filter;
 
-/**
- * Created by GorA on 5/31/16.
- */
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class FilterData {
-    public String getName() {
-        return name;
+
+
+    @SerializedName("city")
+    @Expose
+    private List<String> city = new ArrayList<String>();
+    @SerializedName("cuisine")
+    @Expose
+    private List<String> cuisine = new ArrayList<String>();
+
+    /**
+     * 
+     * @return
+     *     The city
+     */
+    public List<String> getCity() {
+        return city;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * 
+     * @param city
+     *     The city
+     */
+    public void setCity(List<String> city) {
+        this.city = city;
     }
 
-    String name;
-
-    public int getViewType() {
-        return viewType;
+    /**
+     * 
+     * @return
+     *     The cuisine
+     */
+    public List<String> getCuisine() {
+        return cuisine;
     }
 
-    public void setViewType(int viewType) {
-        this.viewType = viewType;
+    /**
+     * 
+     * @param cuisine
+     *     The cuisine
+     */
+    public void setCuisine(List<String> cuisine) {
+        this.cuisine = cuisine;
     }
-
-    int viewType = -1;
 
 }

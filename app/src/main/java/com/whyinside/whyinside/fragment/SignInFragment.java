@@ -3,7 +3,6 @@ package com.whyinside.whyinside.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -13,22 +12,22 @@ import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.whyinside.whyinside.R;
-import com.whyinside.whyinside.activity.AccountActivity;
-import com.whyinside.whyinside.activity.ContactUsActivity;
-import com.whyinside.whyinside.activity.FAQActivity;
 import com.whyinside.whyinside.activity.FindNearActivity;
-import com.whyinside.whyinside.activity.LoginActivity;
 import com.whyinside.whyinside.activity.MainActivity;
-import com.whyinside.whyinside.activity.OrderSummeryAvtivity;
-import com.whyinside.whyinside.activity.SettingsActivity;
 import com.whyinside.whyinside.listener.LoginNavigationListener;
+import com.whyinside.whyinside.services.MClient;
+import com.whyinside.whyinside.services.ServiceGenerator;
+import com.whyinside.whyinside.services.models.LoginData;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Hayk on 29/05/2016.
@@ -43,12 +42,15 @@ public class SignInFragment extends LoginBaseFragment {
     @Bind(R.id.btn_signin)
     TextView mSignIn;
 
+    @Bind(R.id.singInProgress)
+    ProgressBar singInProgress;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signin, null);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -66,14 +68,15 @@ public class SignInFragment extends LoginBaseFragment {
         mSkipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),FindNearActivity.class));
+                startActivity(new Intent(getActivity(), FindNearActivity.class));
             }
         });
 
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),OrderSummeryAvtivity.class));
+                singInProgress.setVisibility(View.VISIBLE);
+                signIn();
             }
         });
 
@@ -127,6 +130,26 @@ public class SignInFragment extends LoginBaseFragment {
 //            startActivity(i);
 //        }
 //    });
+
+    private void signIn() {
+        MClient client = ServiceGenerator.createService(MClient.class);
+
+        Call<LoginData> call = client.singIn();
+        call.enqueue(new Callback<LoginData>() {
+            @Override
+            public void onResponse(Call<LoginData> call, Response<LoginData> response) {
+                singInProgress.setVisibility(View.GONE);
+                startActivity(new Intent(getActivity(), MainActivity.class));
+
+            }
+
+            @Override
+            public void onFailure(Call<LoginData> call, Throwable t) {
+                System.out.print("Error" + t.getMessage());
+            }
+        });
+
+    }
 
 
     @Override

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.whyinside.whyinside.R;
-import com.whyinside.whyinside.models.filter.FilterData;
+import com.whyinside.whyinside.models.filter.FilterCollectedData;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,8 +23,8 @@ public class FilterLabelView extends AbstractView {
 
     @Override
     public void bind(Object data) {
-        FilterData currentData = (FilterData) data;
-        filterLabel.setText(currentData.getName());
+        FilterCollectedData currentData = (FilterCollectedData) data;
+        filterLabel.setText(currentData.getTitle());
     }
 
     public FilterLabelView(Context context, ViewGroup parent) {
