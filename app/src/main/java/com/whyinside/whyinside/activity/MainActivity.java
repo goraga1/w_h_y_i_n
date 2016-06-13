@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        requestFilterData();
+      //  requestFilterData();
     }
 
 
