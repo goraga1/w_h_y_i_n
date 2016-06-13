@@ -18,7 +18,7 @@ public interface MClient {
     Call<RestaurantsStatus> restaurantList();
 
 
-    @GET("~fbapp/whyinsidemenu/?action=get_filters")
+    @GET("~fbapp/whyinsidemenu/?action=get_filters&session_id=b81884bda1f4e5b05dfd556fa6c8bf4a")
     Call<Filter> filtersList();
 
 }

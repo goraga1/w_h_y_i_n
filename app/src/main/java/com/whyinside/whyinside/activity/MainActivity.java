@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      //  requestFilterData();
+       requestFilterData();
     }
 
 
@@ -122,12 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<FilterCollectedData> filterCollectedDataList = new ArrayList<>();
 
-        FilterCollectedData cityLabel = new FilterCollectedData();
 
-        cityLabel.setTitle("City");
-        cityLabel.setViewType(1);
-
-        filterCollectedDataList.add(0, cityLabel);
 
         for (String cityName : filter.getCity()) {
             FilterCollectedData cityData = new FilterCollectedData();
@@ -142,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         cuisineLabel.setTitle("Cuisine");
         cuisineLabel.setViewType(1);
 
-        filterCollectedDataList.add(filter.getCity().size() + 1, cuisineLabel);
+        filterCollectedDataList.add(filter.getCity().size(), cuisineLabel);
 
 
         for (String cuisineName : filter.getCity()) {
@@ -153,7 +148,12 @@ public class MainActivity extends AppCompatActivity {
             filterCollectedDataList.add(cuisineData);
         }
 
+        FilterCollectedData cityLabel = new FilterCollectedData();
 
+        cityLabel.setTitle("City");
+        cityLabel.setViewType(1);
+
+        filterCollectedDataList.add(1,cityLabel);
         navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, filterCollectedDataList));
     }
 
