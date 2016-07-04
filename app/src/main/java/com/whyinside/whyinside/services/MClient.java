@@ -14,7 +14,7 @@ public interface MClient {
     Call<LoginData> singIn();
 
 
-    @GET("~fbapp/whyinsidemenu/?source=restaurants&total=1&session_id=b81884bda1f4e5b05dfd556fa6c8bf4a")
+    @GET("~fbapp/whyinsidemenu/?source=restaurants&total=1&session_id=16bf3eed70ffef75f819c46dcf917513")
     Call<RestaurantsStatus> restaurantList();
 
 
