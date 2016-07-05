@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 
 public interface MClient {
 
-    @POST("~fbapp/whyinsidemenu/?action=login?&user=test@gmail.com&pass=test")
+    @POST("~fbapp/whyinsidemenu/?action=login&user=test@gmail.com&pass=test")
     Call<LoginData> singIn();
 
 
@@ -18,7 +18,7 @@ public interface MClient {
     Call<RestaurantsStatus> restaurantList();
 
 
-    @GET("~fbapp/whyinsidemenu/?action=get_filters&session_id=b81884bda1f4e5b05dfd556fa6c8bf4a")
+    @GET("~fbapp/whyinsidemenu/?action=get_filters&session_id=16bf3eed70ffef75f819c46dcf917513")
     Call<Filter> filtersList();
 
 }
