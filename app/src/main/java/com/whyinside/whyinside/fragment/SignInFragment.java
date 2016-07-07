@@ -76,7 +76,7 @@ public class SignInFragment extends LoginBaseFragment {
             @Override
             public void onClick(View v) {
                 singInProgress.setVisibility(View.VISIBLE);
-                signIn();
+                signIn("test@gmail.com", "pass");
             }
         });
 
@@ -131,10 +131,10 @@ public class SignInFragment extends LoginBaseFragment {
 //        }
 //    });
 
-    private void signIn() {
+    private void signIn(String user, String password) {
         MClient client = ServiceGenerator.createService(MClient.class);
 
-        Call<LoginData> call = client.singIn();
+        Call<LoginData> call = client.singIn(user, password);
         call.enqueue(new Callback<LoginData>() {
             @Override
             public void onResponse(Call<LoginData> call, Response<LoginData> response) {

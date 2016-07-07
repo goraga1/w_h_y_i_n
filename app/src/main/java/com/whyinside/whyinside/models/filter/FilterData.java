@@ -18,7 +18,7 @@ public class FilterData {
     private List<String> cuisine = new ArrayList<String>();
 
     /**
-     * 
+     *
      * @return
      *     The city
      */
@@ -27,7 +27,7 @@ public class FilterData {
     }
 
     /**
-     * 
+     *
      * @param city
      *     The city
      */
@@ -36,7 +36,7 @@ public class FilterData {
     }
 
     /**
-     * 
+     *
      * @return
      *     The cuisine
      */
@@ -45,7 +45,7 @@ public class FilterData {
     }
 
     /**
-     * 
+     *
      * @param cuisine
      *     The cuisine
      */

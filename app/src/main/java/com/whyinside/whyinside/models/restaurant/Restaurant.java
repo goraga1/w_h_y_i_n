@@ -60,9 +60,9 @@ public class Restaurant {
     @SerializedName("delivery_zipcodes")
     @Expose
     private String deliveryZipcodes;
-    @SerializedName("block_limits")
-    @Expose
-    private String blockLimits;
+    //@SerializedName("block_limits")
+   // @Expose
+   // private String blockLimits;
     @SerializedName("cuisine")
     @Expose
     private String cuisine;
@@ -436,19 +436,19 @@ public class Restaurant {
         this.deliveryZipcodes = deliveryZipcodes;
     }
 
-    /**
-     * @return The blockLimits
-     */
-    public String getBlockLimits() {
-        return blockLimits;
-    }
-
-    /**
-     * @param blockLimits The block_limits
-     */
-    public void setBlockLimits(String blockLimits) {
-        this.blockLimits = blockLimits;
-    }
+//    /**
+//     * @return The blockLimits
+//     */
+//    public String getBlockLimits() {
+//        return blockLimits;
+//    }
+//
+//    /**
+//     * @param blockLimits The block_limits
+//     */
+//    public void setBlockLimits(String blockLimits) {
+//        this.blockLimits = blockLimits;
+//    }
 
     /**
      * @return The cuisine

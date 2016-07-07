@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       requestFilterData();
+        requestFilterData();
     }
 
 
@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView1.setLayoutManager(ln);
 
         List<FilterCollectedData> filterCollectedDataList = new ArrayList<>();
-
 
 
         for (String cityName : filter.getCity()) {
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         cityLabel.setTitle("City");
         cityLabel.setViewType(1);
 
-        filterCollectedDataList.add(1,cityLabel);
+        filterCollectedDataList.add(1, cityLabel);
         navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, filterCollectedDataList));
     }
 
