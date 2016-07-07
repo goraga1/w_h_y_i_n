@@ -140,7 +140,6 @@ public class SignInFragment extends LoginBaseFragment {
             public void onResponse(Call<LoginData> call, Response<LoginData> response) {
                 singInProgress.setVisibility(View.GONE);
                 startActivity(new Intent(getActivity(), MainActivity.class));
-
             }
 
             @Override

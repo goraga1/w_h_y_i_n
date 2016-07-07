@@ -20,12 +20,16 @@ public class RestaurantView extends AbstractView {
     @Bind(R.id.item_name)
     TextView mName;
 
+    @Bind(R.id.item_place)
+    TextView mPlace;
+
     @Bind(R.id.rate_view)
     WhyInsideStarsView mStartView;
     @Override
     public void bind(Object data) {
         Restaurant currentData = (Restaurant) data;
         mName.setText(currentData.getName());
+        mPlace.setText(currentData.getCity());
         mStartView.setRate(3.8f);
     }
 
