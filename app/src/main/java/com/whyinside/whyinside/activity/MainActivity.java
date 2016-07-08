@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Bind(R.id.nav_view_right)
-    RecyclerView navigationView1;
+    RecyclerView filterListRA;
     private FragmentManager mFragmentManager;
 
     DrawerLayout drawer;
@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
     private void setUpRightMenu(FilterData filter) {
         LinearLayoutManager ln = new LinearLayoutManager(this);
         ln.setOrientation(LinearLayoutManager.VERTICAL);
-        navigationView1.setHasFixedSize(true);
-        navigationView1.setLayoutManager(ln);
+        filterListRA.setHasFixedSize(true);
+        filterListRA.setLayoutManager(ln);
 
         List<FilterCollectedData> filterCollectedDataList = new ArrayList<>();
 
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         cityLabel.setViewType(1);
 
         filterCollectedDataList.add(1, cityLabel);
-        navigationView1.setAdapter(new FilterRecyclerAdapter(MainActivity.this, filterCollectedDataList));
+        filterListRA.setAdapter(new FilterRecyclerAdapter(MainActivity.this, filterCollectedDataList));
     }
 
     @Override

@@ -30,6 +30,7 @@ public class FilterLabelView extends AbstractView {
     public FilterLabelView(Context context, ViewGroup parent) {
         this(context, LayoutInflater.from(context).inflate(R.layout.filter_label_item, parent, false));
 
+
     }
 
     public FilterLabelView(final Context context, View view) {

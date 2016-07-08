@@ -28,6 +28,7 @@ public class FilterRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     public FilterRecyclerAdapter(Context context, List<FilterCollectedData> items) {
         mInflater = LayoutInflater.from(context);
+
         mItems = items;
         this.context = context;
     }
