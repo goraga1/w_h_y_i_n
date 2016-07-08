@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         filterCollectedDataList.add(filter.getCity().size(), cuisineLabel);
 
 
-        for (String cuisineName : filter.getCity()) {
+        for (String cuisineName : filter.getCuisine()) {
             FilterCollectedData cuisineData = new FilterCollectedData();
             cuisineData.setViewType(2);
             cuisineData.setTitle(cuisineName);
