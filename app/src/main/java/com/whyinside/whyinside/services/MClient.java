@@ -18,6 +18,9 @@ public interface MClient {
     @GET("~fbapp/whyinsidemenu/?source=restaurants&total")
     Call<RestaurantsStatus> restaurantList();
 
+    @GET("~fbapp/whyinsidemenu/?source=restaurants")
+    Call<RestaurantsStatus> restaurantDetails(@Query("id") Integer id);
+
 
     @GET("~fbapp/whyinsidemenu/?action=get_filters")
     Call<Filter> filtersList();
