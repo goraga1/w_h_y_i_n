@@ -14,6 +14,7 @@
             android:layout_weight="1"
             android:paddingRight="10dp">
             <ImageView
+                android:id="@+id/rest_image"
                 android:layout_width="@dimen/rest_image_size"
                 android:layout_height="@dimen/rest_image_size"
                 android:scaleType="centerCrop"

@@ -1,4 +1,3 @@
-
 package com.whyinside.whyinside.models.restaurant;
 
 import com.google.gson.annotations.Expose;
