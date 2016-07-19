@@ -73,9 +73,9 @@ public class Restaurant implements Serializable {
 //    @SerializedName("state")
 //    @Expose
 //    private String state;
-//    @SerializedName("city")
-//    @Expose
-//    private String city;
+    @SerializedName("city")
+    @Expose
+    private String city;
 //    @SerializedName("phone")
 //    @Expose
 //    private String phone;
@@ -235,6 +235,9 @@ public class Restaurant implements Serializable {
      * @return The image
      */
     public String getImage() {
+        if (!image.equals("")) {
+           return image.substring(2);
+        }
         return image;
     }
 
@@ -245,4 +248,12 @@ public class Restaurant implements Serializable {
         this.image = image;
     }
 
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

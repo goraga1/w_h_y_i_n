@@ -1,6 +1,7 @@
 package com.whyinside.whyinside.services;
 
 import com.whyinside.whyinside.models.filter.Filter;
+import com.whyinside.whyinside.models.restaurant.RestaurantDetials;
 import com.whyinside.whyinside.models.restaurant.RestaurantsStatus;
 import com.whyinside.whyinside.services.models.LoginData;
 
@@ -19,7 +20,7 @@ public interface MClient {
     Call<RestaurantsStatus> restaurantList();
 
     @GET("~fbapp/whyinsidemenu/?source=restaurants")
-    Call<RestaurantsStatus> restaurantDetails(@Query("id") Integer id);
+    Call<RestaurantDetials> restaurantDetails(@Query("id") Integer id);
 
 
     @GET("~fbapp/whyinsidemenu/?action=get_filters")

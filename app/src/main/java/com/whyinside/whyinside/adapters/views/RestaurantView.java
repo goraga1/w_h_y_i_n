@@ -36,7 +36,7 @@ public class RestaurantView extends AbstractView {
     public void bind(Object data) {
         Restaurant currentData = (Restaurant) data;
         mName.setText(currentData.getName());
-        //  mPlace.setText(currentData.getCity());
+        mPlace.setText(currentData.getCity());
         mStartView.setRate(3.8f);
 
         if (!currentData.getImage().equals(""))

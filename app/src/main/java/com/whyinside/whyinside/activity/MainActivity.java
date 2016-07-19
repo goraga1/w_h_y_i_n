@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -17,10 +18,15 @@ import android.view.MenuItem;
 
 import com.whyinside.whyinside.R;
 import com.whyinside.whyinside.adapters.FilterRecyclerAdapter;
+import com.whyinside.whyinside.enums.RestaurantNavigationState;
+import com.whyinside.whyinside.fragment.RestaurantDetailsFragment;
 import com.whyinside.whyinside.fragment.RestaurantListFragment;
+import com.whyinside.whyinside.listener.LoginNavigationListener;
+import com.whyinside.whyinside.listener.RestaurantNavigationListener;
 import com.whyinside.whyinside.models.filter.Filter;
 import com.whyinside.whyinside.models.filter.FilterCollectedData;
 import com.whyinside.whyinside.models.filter.FilterData;
+import com.whyinside.whyinside.models.restaurant.Restaurant;
 import com.whyinside.whyinside.services.MClient;
 import com.whyinside.whyinside.services.ServiceGenerator;
 
@@ -37,7 +43,7 @@ import retrofit2.Response;
  * Created by GorA on 6/2/16.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RestaurantNavigationListener {
 
 
     @Bind(R.id.nav_view_right)
@@ -48,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActionBar actionBar;
 
-
+    RestaurantNavigationState mNavigationState = RestaurantNavigationState.LIST;
 //    @Override
 //    public void onAttachedToWindow() {
 //        super.onAttachedToWindow();
@@ -163,8 +169,15 @@ public class MainActivity extends AppCompatActivity {
         } else if (drawer.isDrawerOpen(GravityCompat.END)) {  /*Closes the Appropriate Drawer*/
             drawer.closeDrawer(GravityCompat.END);
         } else {
-            super.onBackPressed();
-            System.exit(0);
+            int count = getFragmentManager().getBackStackEntryCount();
+
+//            if (mNavigationState == RestaurantNavigationState.DETAILS) {
+//                OnRestaurantList();
+//            } else {
+                super.onBackPressed();
+
+//            }
+
         }
     }
 
@@ -209,6 +222,23 @@ public class MainActivity extends AppCompatActivity {
                 System.out.print("Error" + t.getMessage());
             }
         });
+    }
 
+
+    @Override
+    public void OnRestarutantDetails(Restaurant restaurant) {
+        FragmentTransaction tr = mFragmentManager.beginTransaction();
+        tr.replace(R.id.fragment_container_rest, new RestaurantDetailsFragment());
+        tr.addToBackStack(null);
+        tr.commit();
+        mNavigationState = RestaurantNavigationState.DETAILS;
+    }
+
+    @Override
+    public void OnRestaurantList() {
+        FragmentTransaction tr = mFragmentManager.beginTransaction();
+        tr.replace(R.id.fragment_container_rest, new RestaurantListFragment());
+        tr.commit();
+        mNavigationState = RestaurantNavigationState.LIST;
     }
 }
