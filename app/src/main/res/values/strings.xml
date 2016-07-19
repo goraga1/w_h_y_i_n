@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_filter">Filter</string>
+    <string name="action_search">Search</string>
 
     <string name="label_skip_for_now">Skip for Now</string>
     <string name="label_signin_screen">Log in using the form below</string>
